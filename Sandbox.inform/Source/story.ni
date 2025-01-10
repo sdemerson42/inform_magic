@@ -5,11 +5,6 @@ Include Simple People by Scott Emerson. Include Basic Screen Effects by Emily Sh
 Use scoring.
 The maximum score is 100.	
 
-When play begins: 
-	Say "'So as I understand it, milord, your daughter is to be wed tomorrow, but you would prefer the wedding to be an unhappy one, yes?'[paragraph break]'Or to not happen at all, ideally,' says Lord Bletchley, your esteemed client. 'I don't approve of the groom or his family, and frankly this whole thing was my wife's idea. Well, I intend to make it an affair to remember! With your help, of course.'[paragraph break]'Of course,' you murmur, calculating a nice fee in your mind. 'Well, I suppose I can conjure up a terrifying storm of some kind for my standard rate. For a bit extra I'll throw in a minor earthquake, or make it rain frogs...'[paragraph break]Ten minutes and a bit of dickering later, with a down payment in hand, you watch Lord Bletchley stride happily out of your parlor. That went rather well... now, to work![paragraph break][bracket]Press any key[close bracket]";
-	Wait for any key;
-	Say paragraph break;
-
 The player is in the Parlor.
 
 Chapter 1 - Concepts
@@ -19,7 +14,7 @@ To say random (L - list of texts):
 	Let y be entry x of L;
 	Say y;
 
-Section - New Kinds
+Section - Kinds and Properties
 
 A reagent is a kind of thing. A reagent has a number called worth. The worth is usually 10.
 
@@ -32,6 +27,16 @@ Section - New Actions
 Frotzing is an action applying to nothing. Understand "frotz" and "say frotz" and "cast frotz" as frotzing.
 Report frotzing:
 	Say "You raise your arms impressively and shout, 'Frotz!' There is a quick burst of greenish light, but nothing else happens.";
+	
+Quirrzling is an action applying to nothing. Understand "quirrzle" and "say quirrzle" and "cast quirrzle" as quirrzling.
+
+Check quirrzling:
+	If the player is not carrying the illusory scroll:
+		Say "That's a powerful spell... you'll need a scroll to cast it." instead;
+	Else if the player is not in the Brewery:
+		Say "The illusory scroll quivers discorporeally in your hands, but nothing happens. You'll need to be near your cauldron when you cast it." instead;
+	Else if the power of the cauldron is not the potential of the cauldron:
+		Say "The illusory scroll quivers discorporeally in your hands and the cauldron makes ominous bubbling noises... but nothing happens. The cauldron will need to be fully charged with magical potential in order for the spell to take shape." instead;
 
 Pointing it at is an action applying to one carried thing and one visible thing. Understand "point [something] at [something visible]" and "aim [something] at [something visible]" as pointing it at.
 
@@ -41,7 +46,6 @@ Check pointing something at something:
 		
 Report pointing something at something:
 	Say "You point [the noun] at [the second noun], but nothing impressive happens.";
-
 
 Section - Tables
 
@@ -56,9 +60,16 @@ Wand	Start	Finish	Sound
 wand of frivolity	dragon's eyeball	spherical ruby	"shplork"
 wand of sobriety	spherical ruby	dragon's eyeball	"pring"
 
+Section - Misc
+
+When play begins: 
+	Say "'So as I understand it, milord, your daughter is to be wed tomorrow, but you would prefer the wedding to be an unhappy one, yes?'[paragraph break]'Or to not happen at all, ideally,' says Lord Bletchley, your esteemed client. 'I don't approve of the groom or his family, and frankly this whole thing was my wife's idea. Well, I intend to make it an affair to remember! With your help, of course.'[paragraph break]'Of course,' you murmur, calculating a nice fee in your mind. 'Well, I suppose I can conjure up a terrifying storm of some kind for my standard rate. For a bit extra I'll throw in a minor earthquake, or make it rain frogs...'[paragraph break]Ten minutes and a bit of dickering later, with a down payment in hand, you watch Lord Bletchley stride happily out of your parlor. That went rather well... now, to work![paragraph break][bracket]Press any key[close bracket]";
+	Wait for any key;
+	Say paragraph break;
+
 Chapter 2 - Tests - Not for release
 
-Test full with "get jar / s / give jar to ethel / get eyeball / d / frotz / e / get all / frotz / z / z / z / frotz / w / u / put hen in cauldron / n / n / get wand / point wand of frivolity at eyeball / s / s / put ruby in cauldron / n / e / s / put wand of hedgehog empowerment in box / push button / get wand / n / w / w / w / point wand of hedgehog enfeeblement at mister snuffles / get quill / e / e / e / s / put quill in inkwell / n"
+Test full with "get jar / s / give jar to ethel / get eyeball / d / frotz / e / get all / frotz / z / z / z / frotz / w / u / put hen in cauldron / n / n / get wand / point wand of frivolity at eyeball / s / s / put ruby in cauldron / n / e / s / put wand of hedgehog empowerment in box / push button / get wand / n / w / w / w / point wand of hedgehog enfeeblement at mister snuffles / get quill / e / e / e / s / put quill in inkwell / n / e / frotz / get scroll / w"
 
 Chapter 3 - House Downstairs
 
@@ -223,6 +234,10 @@ Hallway is a room. It is east of Parlor. The description is "Tastefully decorate
 
 The stately grandfather clock is scenery in the Hallway. The printed name is "grandfather clock". The description is "An antique of some value, this clock was given to you a few years ago by either a grateful client or a repentant enemy. You can't remember which."
 
+Before going east in Hallway:
+	If the grandfather clock is in Hallway:
+		Say "You walk straight into the grandfather clock. Ouch!" instead;
+
 The striped wallpaper is scenery in the Hallway. The description is "Mauve and pea green. Good thing you're colorblind!"
 
 Bedroom is a room. It is south of Hallway. The description is "Your bedroom is rather austere, probably due to habits you formed during the lean years. The bed is cozy, the desk is cluttered, and the wardrobe is dusty. You can head out to the north."
@@ -239,8 +254,6 @@ Instead of inserting the quill into the inkwell:
 	Say "The quill slides into the inkwell with a satisfying <click> and locks into place. You hear a faint noise from out in the hallway.";
 	Now the inkwell is full;
 	Now the grandfather clock is nowhere;
-	Change the east exit of Hallway to Stage;
-	Change the west exit of Stage to Hallway;
 	Increase the score by 5;
 	Now the quill is in Bedroom;
 	Now the quill is scenery;
@@ -298,9 +311,23 @@ Report pointing the wand of sobriety at something:
 
 Dining Room is a room. It is north of Hallway. 
 
-Stage is a room.
+Stage is a room. It is east of Hallway. The description is "You stand on a simple wooden stage, surrounded by your adoring fans. They yearn to praise your every action! Should you grow tired of adulation, the exit is to the west.[if unvisited][paragraph break]You sneak a peak back out into the hallway to make certain Ethel isn't eavesdropping. This room is a bit of an indulgence, but every wizard should have one. True, the crowd is merely a sustained illusion, but they do wonders for your self-esteem!"
 
-Index map with Stage mapped east of Hallway.
+Adoring fans are scenery in Stage. Understand "illusion" and "crowd" and "people" and "audience" as the adoring fans. The description is "Your audience is hopelessly devoted to you, and you feel a genuine fondness for them despite their being more or less a collective figment of your imagination. They seem to especially like it when you say magic words for them."
+
+Every turn while the player is in Stage:
+	If a random chance of 1 in 2 succeeds:
+		Say "[one of]The audience sighs with reverential approval.[or]A burst of spontaneous applause erupts from the crowd. They love you![or]'Did you see that?! He said '[the player's command]!' If only I could be so bold and cunning!'[or]An envious laugh is audible from a man in the crowd. He wishes HE had said '[the player's command]' just now.[or]The audience gasps in admiration.[or]'Encore!' chants the crowd. 'Encore!'[or]An imaginary young whippersnapper pipes, 'Golly! When I grow up I want to say '[the player's command]' just like you!'[at random]";
+		
+The illusory scroll is a thing. It is nowhere. The description is "Technically this scroll is imaginary, but it's shaped from your own magically charged thoughts and memories, so it will do in a pinch. It contains the Quirrzle spell: Create misery from happiness." Understand "imaginary scroll" and "quirrzle scroll" as the illusory scroll.
+
+Instead of frotzing while the player is in Stage:
+	If the illusory scroll is nowhere:
+		Say "You give your audience a solicitous smile and crack your knuckles. They collectively lean forward in breathless anticipation (because none of them can actually breathe.) You clear your throat, give them a sly wink... and say 'Frotz!'[paragraph break]The audience members rise to their feet as one and burst into thunderous applause. Showers of airy, gossamer roses rain down on you, only to evaporate into thin air upon hitting the stage. In a paroxysm of enthusiasm a young man throws what appears to be a scroll at your feet. Interestingly, the scroll stays on the stage even after the applause has died down and the audience have returned to their seats.[paragraph break]You look at the scroll hawkishly - it's most likely a part of your memory rendered into a stable illusion, probably something you've been trying to remember but couldn't... until now!";
+		Now the illusory scroll is in Stage;
+		Increase the score by 5;
+	else:
+		Say "With as much theatricality as you can muster, you treat the audience to a 'Frotz' encore. Their enthusiasm is undiminished, but honestly you just feel a little hollow inside this time.";
 
 Foyer is a room. It is west of Parlor.
 
