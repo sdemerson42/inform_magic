@@ -369,8 +369,11 @@ The silken cord is scenery in the Foyer. The description is "Pulling this cord w
 Instead of pulling the silken cord:
 	If the player is not foresighted:
 		Say "You can't think of anywhere you strictly need to go at the moment; better to hold off and keep your travel costs down.";
+	else if the flying carpet is hired:
+		Say "You've already summoned a ride; better catch it before it leaves!";
 	else:
-		Say "Transportation hired... To be continued!";
+		Say "You tug on the cord, and immediately hear the nasal piping of a ney flute echoing in the distance. Your ride should arrive outside shortly.";
+		Now the flying carpet is hired;
 
 Scrying Room is a room. It is north of Parlor. It is west of Dining Room. The description is "Just the place to unwind after a hard day, the scrying room is all about the pleasures of eavesdropping, busybodying, and peeping tomfoolery. A crystal ball takes pride of place in the center of the room next to an old alchemical bench, and the ceiling is painted with a mural depicting the zodiac. Other rooms lie to the south and east."
 
@@ -411,7 +414,7 @@ House Ground Floor is a region. Brewery, Parlor, Hallway, Bedroom, Dining Room, 
 				
 Chapter 5 - Outdoors
 
-Grounds is a room. It is west of Foyer. The Foyer is inside from Grounds. The description of the Grounds is "You stand in the lordly grounds in front of your stately home. In truth it's not much to see; a few shrubs encircle a filthy marble fountain (which hasn't been used in years), and a psi antenna stands off to one side. You can re-enter the house to the east, or head off into the wider world to the west."
+Grounds is a room. It is west of Foyer. The Foyer is inside from Grounds. The Grounds is west of Grounds. The description of the Grounds is "You stand in the lordly grounds in front of your stately home. In truth it's not much to see; a few shrubs encircle a filthy marble fountain (which hasn't been used in years), and a psi antenna stands off to one side. You can re-enter the house to the east, or head off into the wider world to the west."
 
 The shrubs are scenery in the Grounds. Understand "shrub/bush/bushes" as the shrubs. The description is "They're aggressively uninteresting. Not even trimmed to resemble circus animals."
 
@@ -459,8 +462,34 @@ Carry out pointing the wand of hedgehog enfeeblement at Mister Snuffles:
 	
 Report pointing the wand of hedgehog enfeeblement at Mister Snuffles:
 	Say "A ray of sickly purple light erupts from the wand, and soon Mister Snuffles is but an awkward, puny shadow of his former self. Apologizing profusely for his many misdeeds he flees from your property, leaving only a single quill behind him." instead;
+	
+The flying carpet is fixed in place. It is nowhere. "A flying carpet bobs cheerfully above the ground to the west." The description is "It's gaily painted and ready to take you wherever you need to go. You can reach it to the west." The flying carpet can be hired. The flying carpet is not hired.
+	
+Carpet Service is a recurring scene. Carpet Service begins when the flying carpet is hired. Carpet Service ends when the time since Carpet Service began is 5 minutes.
+	
+When Carpet Service ends:
+	Now the flying carpet is nowhere;
+	Now the flying carpet is not hired;
+	If the player is in Grounds:
+		Say "With a slight wooshing sound the flying carpet zips back into the sky.";
+	
+Every turn during Carpet Service:
+	Let t be the time since Carpet Service began;
+	If t is 2 minutes:
+		Now the flying carpet is in Grounds;
+		If the player is in Grounds:
+			Say "Right on time, a flying carpet descends from the sky and parks just to the west.";
+			
+Instead of entering the flying carpet, try going west instead;
 
-Woods is a room.
+Before going west in Grounds:
+	If the flying carpet is nowhere:
+		Say "The exercise would no doubt do you a world of good, but you're solidly opposed to any long walks." instead;
+	else:
+		Say "You sprint to the west and hop onto the magic carpet, shamefully out of breath. A ghostly djinn materializes on the carpet and awaits your command. You describe as best you can the general location of the gnome village, and with a wordless nod he takes the carpet up into the air.[paragraph break]A short time later you descend into a forest north of town. This isn't strictly where you wanted to be, but it's probably close enough and you know better than to argue with extraplanar entities, so you hop off. The carpet swoops into the sky and vanishes, leaving you in...";
+		Now the player is in Woods instead;
+
+Woods is a room. The description is "You find yourself in a pleasant little copse deep in the heart of an old forest. A path leads away to the northeast."
 
 Clearing is a room. South from Clearing is northeast from Woods.
 
