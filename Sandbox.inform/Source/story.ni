@@ -11,6 +11,8 @@ To award points for (T - some text):
 
 The player is in the Parlor.
 
+Index map with room-colour of Outdoors set to "Light Green". Index map with room-colour of House Downstairs set to "Light Salmon". Index map with room-colour of House Ground Floor set to "Blanched Almond".
+
 Chapter 1 - Concepts
 
 To say random (L - list of texts):
@@ -386,7 +388,7 @@ The illusory scroll is a thing. It is nowhere. The description is "Technically t
 
 Instead of frotzing while the player is in Stage:
 	If the illusory scroll is not found:
-		Say "You give your audience a solicitous smile and crack your knuckles. They collectively lean forward in breathless anticipation (because none of them can actually breathe.) You clear your throat, give them a sly wink... and say 'Frotz!'[paragraph break]The audience members rise to their feet as one and burst into thunderous applause. Showers of airy, gossamer roses rain down on you, only to evaporate into thin air upon hitting the stage. In a paroxysm of enthusiasm one one young lady faints dead away. An old man shouts, 'Marvelous! Stupendous! Even better than the time you said 'Quirrzle!'[paragraph break]You experience a flash of insight - 'Quirrzle' is just the magic word you need for Lord Bletchley's commission, but you'd clean forgotten it! With a surreal <poof> an illusory scroll manifests in the air above the audience and lands soundlessly at your feet.";
+		Say "You give your audience a solicitous smile and crack your knuckles. They collectively lean forward in breathless anticipation (because none of them can actually breathe.) You clear your throat, give them a sly wink... and say 'Frotz!'[paragraph break]The audience members rise to their feet as one and burst into thunderous applause. Showers of airy, gossamer roses rain down on you, only to evaporate into thin air upon hitting the stage. In a paroxysm of enthusiasm one one young lady faints dead away. An old man shouts, 'Marvelous! Stupendous! Even better than the time you said Quirrzle!'[paragraph break]You experience a flash of insight - 'Quirrzle' is just the magic word you need for Lord Bletchley's commission, but you'd clean forgotten it! With a surreal <poof> an illusory scroll manifests in the air above the audience and lands soundlessly at your feet.";
 		Now the illusory scroll is in Stage;
 		Now the illusory scroll is found;
 		Award points for "impressing the audience";
@@ -552,7 +554,7 @@ Every turn while the player is in the location of the gnome salesman:
 		else:
 			Say "[one of]'Hey! Hey you! Know any wizards? I've got all kinds of great stuff for wizards!'[or]'Want to buy something? Wait, you're not a wizard! Never mind!'[or]'Best prices! Best prices around for wizards, witches, and warlocks!'[at random]";
 	else:
-		Say "The gnome salesman shouts, 'Watch this!' He begins to perform some manner of absurd jig beneath the standing stones. You look around you nervously, waiting for a burst of indecent forest magic, but it turns out that the gnome was merely looking for his sample case.[paragraph break]He pops open the case, pulls out a tacky zirconium bracelet, and tosses it into your waiting hand. 'Top quality! Great at parties! Every wizard should have one!' he yammers before leaping behind a megalith and vanishing from sight, leaving you to stare at your dubious new purchase with growing regret.";
+		Say "The gnome salesman shouts, 'Watch this!' He begins to perform some manner of absurd jig beneath the standing stones. You look around nervously, waiting for a burst of indecent forest magic, but it turns out that the gnome was merely looking for his sample case.[paragraph break]He pops open the case, pulls out a tacky zirconium bracelet, and tosses it into your waiting hand. 'Top quality! Great at parties! Every wizard should have one!' he yammers before leaping behind a megalith and vanishing from sight, leaving you to stare at your dubious new purchase with growing regret.";
 		Now the player has the zirconium bracelet;
 		Now the gnome salesman is nowhere;
 		Award points for "getting conned by a gnome";
