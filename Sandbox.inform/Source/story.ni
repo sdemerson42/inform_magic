@@ -65,8 +65,8 @@ Check tearing something:
 	If the noun is not the return ticket, say "Probably best not to go ripping that up." instead.
 	
 Carry out tearing something:
-	Say "You rip the ticket in half, sending a small spark of magical resonance into the sky. Moments later the ghostly Djinn and his flying carpet descend. You climb aboard and try not to look down as the carpet wooshes through the air and eventually delivers you to...";
-	Now the player is in Grounds;
+	Say "You rip the ticket in half, sending a small spark of magical resonance into the sky. Your ride should return to the forest soon.";
+	Now the flying carpet is rehired;
 	Now the return ticket is nowhere;
 
 Section - Tables
@@ -114,7 +114,9 @@ When play begins:
 
 Chapter 2 - Tests - Not for release
 
-Test all with "get jar / s / give jar to ethel / get eyeball / d / frotz / e / get hen / frotz / z / z / z / frotz / w / u / put hen in cauldron / s / get wand / n / n / n / get wand / point wand of frivolity at eyeball / get ruby / s / s / put ruby in cauldron / n / e / s / put wand of hedgehog empowerment in box / push button / get wand / put wand of frivolity in box / push button / get wand / open wardrobe / get hat / n / w / w / w / point wand of hedgehog enfeeblement at mister snuffles / point wand of sobriety at pearls / get quill / e / e / e / s / put quill in inkwell / n / e / frotz / get scroll / w / n / look under table / wear robe / wear hat / w / look in crystal ball / s / w / pull cord / w / z / get on carpet / nw / point wand of sobriety at coin / give coin to salesman / e / tear ticket / e / e / s / put bracelet in cauldron / say quirrzle"
+Test carpet with "n / get wand / s / e / s / put wand in box / push button / get wand / n / w / w / w / point wand at pearls / e / e / n / look in ball / s / w / pull cord / w / z"
+
+Test all with "get jar / s / give jar to ethel / get eyeball / d / frotz / e / get hen / frotz / z / z / z / frotz / w / u / put hen in cauldron / s / get wand / n / n / n / get wand / point wand of frivolity at eyeball / get ruby / s / s / put ruby in cauldron / n / e / s / put wand of hedgehog empowerment in box / push button / get wand / put wand of frivolity in box / push button / get wand / open wardrobe / get hat / n / w / w / w / point wand of hedgehog enfeeblement at mister snuffles / point wand of sobriety at pearls / get quill / e / e / e / s / put quill in inkwell / n / e / frotz / get scroll / w / n / look under table / wear robe / wear hat / w / look in crystal ball / s / w / pull cord / w / z / get on carpet / nw / point wand of sobriety at coin / give coin to salesman / e / tear ticket / s / z / get on carpet / e / e / s / put bracelet in cauldron / say quirrzle"
 
 Chapter 3 - House Downstairs
 
@@ -237,7 +239,7 @@ Ethel Script is a scene. Ethel Script begins when play begins.
 Every turn during Ethel Script:
 	Do normal business Ethel;
 				
-Parlor is a room. It is north of Brewery. The description is "This cozy, comfortable room is primarily for entertaining clients; they seem a bit more comfortable telling you their problems (and forking over an up-front fee) when they're feeling relaxed, hence the ornate wooden table with two chairs and tea service. A self portait adorns the well, and a rumpled shag carpet completes the scene. Exits lead to other parts of the house north, south, east, and west."
+Parlor is a room. It is north of Brewery. The description is "This cozy, well-appointed room is primarily for entertaining clients; they seem a bit more comfortable telling you their problems (and forking over an up-front fee) when they're feeling relaxed, hence the ornate wooden table with two chairs and tea service. A self portait adorns the well, and a rumpled shag carpet completes the scene. Exits lead to other parts of the house north, south, east, and west."
 
 The ornate wooden table is scenery in Parlor. The description is "It's well-crafted and rather expensive, and it's primary duty is to give consultations a touch of class. A silver tea service sits atop it." It is a supporter.
 
@@ -505,7 +507,7 @@ Carry out pointing the wand of hedgehog enfeeblement at Mister Snuffles:
 Report pointing the wand of hedgehog enfeeblement at Mister Snuffles:
 	Say "A ray of sickly purple light erupts from the wand, and soon Mister Snuffles is but an awkward, puny shadow of his former self. Apologizing profusely for his many misdeeds he flees from your property, leaving only a single quill behind him." instead;
 	
-The flying carpet is fixed in place. It is nowhere. "A flying carpet bobs cheerfully above the ground to the west." The description is "It's gaily painted and ready to take you wherever you need to go. You can reach it to the west." The flying carpet can be hired. The flying carpet is not hired.
+The flying carpet is fixed in place. It is nowhere. "A flying carpet bobs cheerfully above the ground to the [if the flying carpet is in Grounds]west[else]south[end if]." The description is "It's gaily painted and ready to take you wherever you need to go." The flying carpet can be hired. The flying carpet is not hired. The flying carpet can be rehired. The flying carpet is not rehired.
 
 The return ticket is nowhere. The description is "It's a ticket for one return journey to your home. Simply tear it to make the trip."
 	
@@ -524,7 +526,7 @@ Every turn during Carpet Service:
 		If the player is in Grounds:
 			Say "Right on time, a flying carpet descends from the sky and parks just to the west.";
 			
-Instead of entering the flying carpet, try going west instead;
+Instead of entering the flying carpet in Grounds, try going west instead;
 
 Before going west in Grounds:
 	If the flying carpet is nowhere:
@@ -532,9 +534,33 @@ Before going west in Grounds:
 	else:
 		Say "You sprint to the west and hop onto the magic carpet, shamefully out of breath. A ghostly djinn materializes on the carpet and awaits your command. You describe as best you can the general location of the gnome village, and with a wordless nod he takes the carpet up into the air.[paragraph break]A short time later you descend into a forest north of town. This isn't strictly where you wanted to be, but it's probably close enough and you know better than to argue with extraplanar entities, so you hop off. The Djinn hands you a return ticket, then swoops the carpet into the sky and vanishes, leaving you in...";
 		Now the player has the return ticket;
+		Now the flying carpet is nowhere;
 		Now the player is in Woods instead;
+		
+Return Service is a recurring scene. Return Service begins when the flying carpet is rehired. Return Service ends when the player is in Grounds.
+	
+When Return Service ends:
+	Now the flying carpet is nowhere;
+	Now the flying carpet is not rehired;
+	
+Every turn during Return Service:
+	Let t be the time since Return Service began;
+	If t is 2 minutes:
+		Now the flying carpet is in Woods;
+		If the player is in Woods:
+			Say "Right on time, a flying carpet descends from the sky and parks just to the south.";
+			
+Instead of entering the flying carpet in Woods, try going south instead;
 
-Woods is a room. The description is "You find yourself in a pleasant little copse deep in the heart of an old forest. A path meanders from the northeast to the northwest."
+Before going south in Woods:
+	If the flying carpet is nowhere:
+		Say "It's a long way back. Use your return ticket." instead;
+	else:
+		Say "You hop onto the magic carpet. The djinn reappears and wooshes you into the sky, back across the forest, and eventually drops you off at...";
+		Now the flying carpet is nowhere;
+		Now the player is in Grounds instead;
+
+Woods is a room. The Woods is south of the Woods. The description is "You find yourself in a pleasant little copse deep in the heart of an old forest. A path meanders from the northeast to the northwest."
 
 The old forest is scenery in Woods. Understand "cospe" and "tree" and "trees" and "woods" as the old forest. The description is "The woods are lovely, dark and deep, but you have promises to keep, so get moving."
 
@@ -550,7 +576,7 @@ Index map with Clearing mapped northeast of Woods.
 
 Hillside is a room. It is west of Clearing and northwest of Woods. The description is "This charming little hillside is the home of a gnome village. Tiny houses are arrayed on clean, tidy little streets, although they seem to be mostly deserted at the moment. Paths lead away to the east and southeast."
 
-The gnome village is scenery in Hillside. Understand "house/houses" and "tiny house/houses" and "street/streets" as the gnome village. The description is "It's everything the fairytale enthusiast could ever hope for - a little utopia filled with tiny houses and, presumably, eensy weensy little ruddy-faced people. Right now most everyone seems to be out, which is fine by you; you consider gnomes to be unimaginable dullards."
+The gnome village is scenery in Hillside. Understand "house/houses" and "tiny house/houses" and "street/streets" as the gnome village. The description is "It's everything the fairytale enthusiast could ever hope for - a little utopia filled with tiny houses and, presumably, eensy weensy little ruddy-faced people. Right now most everyone seems to be out, which is fine; gnomes are unimaginable dullards."
 
 The gnome salesman is a man. He is in Hillside. "A gnome wearing a preposterous suit struts about, talking nonstop." Understand "suit" and "preposterous suit" and "salesman" and "man" and "gnome" as the gnome salesman. The description is "Like most gnomes, he's very small. Unlike most gnomes he's dressed to the nines, provided the nines have no fashion sense. It's as though a pile of mauve suede got into a drunken brawl with a sentient pile of lace. Your stomach drops as he aims his ceaseless prattle at you - he's a salesman."
 
