@@ -462,6 +462,8 @@ Instead of taking the psychic pearls, say "They're quite hard to pull off manual
 
 Instead of attacking the psychic pearls, say "They stubbornly resist your feeble blows."
 
+Instead of pointing the wand of sobriety at the antenna, try pointing the wand of sobriety at the psychic pearls.
+
 Instead of pointing the wand of sobriety at the psychic pearls:
 	Say "The pearls vibrate a bit, and then with a series of soft pops they transform into a congeries of dingy bubbles which promptly float away on the wind.";
 	Now the psychic pearls are nowhere;
