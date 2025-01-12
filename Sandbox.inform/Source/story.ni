@@ -3,7 +3,11 @@
 Include Simple People by Scott Emerson. Include Basic Screen Effects by Emily Short.
 
 Use scoring.
-The maximum score is 100.	
+The maximum score is 100.
+
+To award points for (T - some text):
+	If there is a Feat of T in the Table of Scores:
+		Increase the score by the Points corresponding to a Feat of T in the Table of Scores;
 
 The player is in the Parlor.
 
@@ -39,6 +43,10 @@ Check quirrzling:
 		Say "The illusory scroll quivers discorporeally in your hands, but nothing happens. You'll need to be near your cauldron when you cast it.[if the player is in Stage] (The audience is still very, very, very impressed.)" instead;
 	Else if the power of the cauldron is not the potential of the cauldron:
 		Say "The illusory scroll quivers discorporeally in your hands and the cauldron makes ominous bubbling noises... but nothing happens. The cauldron will need to be fully charged with magical potential in order for the spell to take shape." instead;
+	Else:
+		Say "Rolling up your sleeves and striking a pose that would leave your illusionary audience screaming with adoration, you hold aloft the gossamer scroll and intone the Spell of Misery.[paragraph break]There's an explosion of astral electricity from the cauldron, a sound like the groaning of a thousand frustrated grooms, the weeping of ten million heartbroken brides, the shrieking of one very angry mother-in-law-to-be... and with that, your work is done. Nothing to do now but read about tomorrow's calamitous nuptials in the paper and collect your fee.";
+		Award points for "ruining a wedding";
+		End the story saying "You have completed your contract!";
 
 Pointing it at is an action applying to one carried thing and one visible thing. Understand "point [something] at [something visible]" and "aim [something] at [something visible]" as pointing it at.
 
@@ -48,6 +56,16 @@ Check pointing something at something:
 		
 Report pointing something at something:
 	Say "You point [the noun] at [the second noun], but nothing impressive happens.";
+	
+Tearing is an action applying to one carried thing. Understand "tear [something]" and "rip [something]" as tearing.
+
+Check tearing something:
+	If the noun is not the return ticket, say "Probably best not to go ripping that up." instead.
+	
+Carry out tearing something:
+	Say "You rip the ticket in half, and instantly a puff of garish stage smoke envelops your body. When the inevitable coughing fit subsides you find yourself standing in...";
+	Now the player is in Parlor;
+	Now the return ticket is nowhere;
 
 Section - Tables
 
@@ -61,6 +79,8 @@ Table of Transformations
 Wand	Start	Finish	Sound
 wand of frivolity	dragon's eyeball	spherical ruby	"shplork"
 wand of sobriety	spherical ruby	dragon's eyeball	"pring"
+wand of sobriety	gold taffle	stone taffle	"ching"
+wand of frivolity	stone taffle	gold taffle	"crunch"
 
 Table of Rankings
 Score	Rank
@@ -69,6 +89,18 @@ Score	Rank
 50	"Professional Homewrecker"
 75	"Wedding Slayer"
 100	"Crusher of Hopes and Dreams"
+
+Table of Scores
+Feat	Points
+"opening a secret passage"	10
+"impressing the audience"	5
+"seeing a mystical vision"	5
+"cleaning your antenna"	5
+"enfeebling a rude hedgehog"	10
+"evading your creditors"		10
+"getting conned by a gnome"	10
+"ruining a wedding"	15
+
 
 Section - Misc
 
@@ -79,7 +111,7 @@ When play begins:
 
 Chapter 2 - Tests - Not for release
 
-Test full with "get jar / s / give jar to ethel / get eyeball / d / frotz / e / get hen / frotz / z / z / z / frotz / w / u / put hen in cauldron / s / get wand / n / n / n / get wand / point wand of frivolity at eyeball / get ruby / s / s / put ruby in cauldron / n / e / s / put wand of hedgehog empowerment in box / push button / get wand / put wand of frivolity in box / push button / get wand / open wardrobe / get hat / n / w / w / w / point wand of hedgehog enfeeblement at mister snuffles / point wand of sobriety at pearls / get quill / e / e / e / s / put quill in inkwell / n / e / frotz / get scroll / w / n / look under table / wear robe / wear hat / w / look in crystal ball"
+Test all with "get jar / s / give jar to ethel / get eyeball / d / frotz / e / get hen / frotz / z / z / z / frotz / w / u / put hen in cauldron / s / get wand / n / n / n / get wand / point wand of frivolity at eyeball / get ruby / s / s / put ruby in cauldron / n / e / s / put wand of hedgehog empowerment in box / push button / get wand / put wand of frivolity in box / push button / get wand / open wardrobe / get hat / n / w / w / w / point wand of hedgehog enfeeblement at mister snuffles / point wand of sobriety at pearls / get quill / e / e / e / s / put quill in inkwell / n / e / frotz / get scroll / w / n / look under table / wear robe / wear hat / w / look in crystal ball / s / w / pull cord / w / z / get on carpet / nw / point wand of sobriety at coin / give coin to salesman / e / tear ticket / s / put bracelet in cauldron / say quirrzle"
 
 Chapter 3 - House Downstairs
 
@@ -120,7 +152,7 @@ When Goblin Attack ends:
 	Now the wrecked furniture is in the antechamber;
 	Now the Antechamber is wrecked;
 	Add a priority bark "Ethel smiles cheerily. 'Some nice goblins came to see you, sir. I sent them downstairs.'" to Ethel;
-	Increase score by 5;
+	Award points for "evading your creditors";
 	
 Every turn during Goblin Attack:
 	Let t be the time since Goblin Attack began;
@@ -145,13 +177,15 @@ House Downstairs is a region. Antechamber and Vault are in House Downstairs.
 
 Chapter 4 - House Ground Floor
 
-The gold Taffle is a thing. The description is "One solid gold Taffle coin, courtesy of Lord Bletchley. A down payment for services to be rendered shortly. It's named after the late Baron Taffle, whose likeness is engraved thereupon." Understand "coin" as the taffle. The player is carrying the gold taffle.
+The gold Taffle is a thing. The description is "One solid gold Taffle coin, courtesy of Lord Bletchley. A down payment for services to be rendered shortly. It's named after the late Baron Taffle, whose likeness is engraved thereupon." Understand "coin" and "gold coin" as the taffle. The player is carrying the gold Taffle.
+
+The stone Taffle is a thing. The description is "One Taffle made of solid rock, courtesy of your magical desecration. It won't purchase much of anything in civilized places, but you might be able to pawn it off on some yokel out in the sticks." Understand "coin" and "stone coin" as the stone Taffle.
 
 The work order is a thing. The player is carrying it. The description of the work order is "Recently written up by you and signed by Lord Bletchley, it describes your intent to wreak heinous mischief upon the good noble's daughter's wedding in a way that is (1) arcane, (2) harmless, and (3) plausibly deniable. You left out most of the technical details, but essentially this will involve adding magical geegaws to your cauldron until it is properly magicked up, then intoning the appropriate magic word.[paragraph break][if the illusory scroll is found]In this case, 'Quirrzle' would seem to be the proper magic word.[else]Which magic word to use? You've got a vague notion but you can't quite remember it. Perhaps it will come back to you in time."
 
 The Brewery is a room. It is above The Antechamber. The description is "This stuffy room is dominated by a large iron cauldron which sits in the center of a pentagram painted on the floor. Stairs lead downward toward the vault, and doorways open to the north and south."
 
-The large iron cauldron is scenery in The Brewery. The description is "It's warm to the touch despite no visible heat source. Magic! It's full of roiling green liquid.[if the power of the cauldron is the potential of the cauldron][line break]It looks as though the brew has reached its full potency!" It is a container. The cauldron has a number called power. The power is 0. The cauldron has a number called potential. The potential is 5.
+The large iron cauldron is scenery in The Brewery. The description is "It's warm to the touch despite no visible heat source. Magic! It's full of roiling green liquid.[if the power of the cauldron is the potential of the cauldron][line break]It looks as though the brew has reached its full potency!" It is a container. The cauldron has a number called power. The power is 0. The cauldron has a number called potential. The potential is 3.
 Instead of touching the cauldron, say "Yep, it's warm alright."
 
 Instead of searching the cauldron, try examining the cauldron.
@@ -264,7 +298,7 @@ Instead of inserting the quill into the inkwell:
 	Say "The quill slides into the inkwell with a satisfying <click> and locks into place. You hear a faint noise from out in the hallway.";
 	Now the inkwell is full;
 	Now the grandfather clock is nowhere;
-	Increase the score by 5;
+	Award points for "opening a secret passage";
 	Now the quill is in Bedroom;
 	Now the quill is scenery;
 
@@ -307,9 +341,6 @@ The wand of hedgehog enfeeblement is a wand. The description is "A pretty standa
 
 The wand of sobriety is a wand. The description is "It's a discount wand of somewhat limited utility. When you point it at something small, round, useless and beautiful, the pointee becomes something small, round, useless and dull."
 
-Report pointing the wand of sobriety at the taffle:
-	Say "The taffle shudders hesitantly under the influnce of the wand, but ultimately it seems that currency is too inherently useful to be transformed." instead;
-	
 Carry out pointing the wand of sobriety at something:
 	If there is a Start of the second noun in the Table of Transformations:
 		If the Wand corresponding to a Start of the second noun in the Table of Transformations is the wand of sobriety:
@@ -358,7 +389,7 @@ Instead of frotzing while the player is in Stage:
 		Say "You give your audience a solicitous smile and crack your knuckles. They collectively lean forward in breathless anticipation (because none of them can actually breathe.) You clear your throat, give them a sly wink... and say 'Frotz!'[paragraph break]The audience members rise to their feet as one and burst into thunderous applause. Showers of airy, gossamer roses rain down on you, only to evaporate into thin air upon hitting the stage. In a paroxysm of enthusiasm one one young lady faints dead away. An old man shouts, 'Marvelous! Stupendous! Even better than the time you said 'Quirrzle!'[paragraph break]You experience a flash of insight - 'Quirrzle' is just the magic word you need for Lord Bletchley's commission, but you'd clean forgotten it! With a surreal <poof> an illusory scroll manifests in the air above the audience and lands soundlessly at your feet.";
 		Now the illusory scroll is in Stage;
 		Now the illusory scroll is found;
-		Increase the score by 5;
+		Award points for "impressing the audience";
 	else:
 		Say "With as much theatricality as you can muster, you treat the audience to a 'Frotz' encore. Their enthusiasm is undiminished, but honestly you just feel a little hollow inside this time.";
 
@@ -384,11 +415,11 @@ Instead of searching the crystal ball:
 		Say "The images swirling around within the crystal ball are hopelessly dim and confused; there must be interference coming from somewhere.";
 	else:
 		If the player is foresighted:
-			Say "You peer greedily into the crystal ball again, hoping for another revelation, but the same vision comes to you once more... ruin, payment, and yourself, showing a stone disc (or something) to a puffed up gnome.";
+			Say "You peer greedily into the crystal ball again, hoping for another revelation, but the same vision comes to you once more... ruin, payment, and yourself, giving a something to a puffed up gnome.";
 		else:
-			Say "You pass your hands ceremoniously over the crystal ball and await a vision of the future..[paragraph break]You see a howling wind, a terrifying storm, party guests fleeing in all directions, a sobbing bride, a dumbfounded groom... you see a great pile of gold being delivered to your front door by a surly yeoman wearing the livery of Lord Bletchley... and finally, you see yourself, robed and wearing your hat, showing what looks like some kind of stone disc to a foppish gnome sitting on a toadstool...[paragraph break]The vision goes dark. Promising portents! Although you're not thrilled about fraternizing with gnomes (terrible dullards.) You recognize where the vision took place - it was the gnome village on the outskirts of town near the old standing stones. Since all of the visions are likely to be interconnected you should probably plan to go there as soon as possible.";
+			Say "You pass your hands ceremoniously over the crystal ball and await a vision of the future..[paragraph break]You see a howling wind, a terrifying storm, party guests fleeing in all directions, a sobbing bride, a dumbfounded groom... you see a great pile of gold being delivered to your front door by a surly yeoman wearing the livery of Lord Bletchley... and finally, you see yourself, robed and wearing your hat, giving something to a small, foppishly-dressed man...[paragraph break]The vision goes dark. Promising portents! You recognize where the vision took place - it was the gnome village on the outskirts of town near the old standing stones. Since all of the visions are likely to be interconnected you should probably plan to go there as soon as possible.";
 			Now the player is foresighted;
-			Increase the score by 5;
+			Award points for "seeing a mystical vision";
 
 The mural is scenery in the Scrying Room. The description is "Beautifully crafted by local artist Zeb Fremshaw, the mural illustrates the well-known signs of the zodiac, including Jarmus the Spaniel, Werbwe the Mermaid, and Bragg the Postal Worker." Understand "zodiac/signs/sign/jarmus/spaniel/werbwe/mermaid/bragg/worker" and "mural of the zodiac" and "postal worker" and "werbwe the mermaid" and "jarmus the spaniel" and "bragg the postal worker" and "ceiling" and "painted ceiling" as the mural.
 
@@ -396,7 +427,7 @@ The alchemical bench is a supporter in the Scrying Room. It is scenery.
 
 The wand of frivolity is on the alchemical bench. It is a wand. The description is "It's a discount wand of somewhat limited utility. When you point it at something small, round, useless and dull, the pointee becomes something small, round, useless and beautiful."
 
-The spherical ruby is a reagent. The description is "A perfectly round ruby, pulsing with magical potential!" Understand "round ruby" and "perfectly round ruby" as the ruby. The worth of the ruby is 15.
+The spherical ruby is a reagent. The description is "A perfectly round ruby, pulsing with magical potential!" Understand "round ruby" and "perfectly round ruby" as the ruby.
 	
 Carry out pointing the wand of frivolity at something:
 	If there is a Start of the second noun in the Table of Transformations:
@@ -435,7 +466,7 @@ Instead of pointing the wand of sobriety at the psychic pearls:
 	Say "The pearls vibrate a bit, and then with a series of soft pops they transform into a congeries of dingy bubbles which promptly float away on the wind.";
 	Now the psychic pearls are nowhere;
 	Now the antenna is clean;
-	Increase the score by 5;
+	Award points for "cleaning your antenna";
 
 Mister Snuffles is a hedgehog. He is in Grounds. "Mister Snuffles is here, poking around insolently the bushes." The description is "He's a hedgehog. He's been here for years and frankly acts as though he owns the place." Understand "hedgehog" as Mister Snuffles.
 
@@ -458,12 +489,14 @@ Report pointing the wand of hedgehog empowerment at Mister Snuffles:
 Carry out pointing the wand of hedgehog enfeeblement at Mister Snuffles:
 	Now Mister Snuffles is nowhere;
 	Now the quill is in Grounds;
-	Increase the score by 5;
+	Award points for "enfeebling a rude hedgehog";
 	
 Report pointing the wand of hedgehog enfeeblement at Mister Snuffles:
 	Say "A ray of sickly purple light erupts from the wand, and soon Mister Snuffles is but an awkward, puny shadow of his former self. Apologizing profusely for his many misdeeds he flees from your property, leaving only a single quill behind him." instead;
 	
 The flying carpet is fixed in place. It is nowhere. "A flying carpet bobs cheerfully above the ground to the west." The description is "It's gaily painted and ready to take you wherever you need to go. You can reach it to the west." The flying carpet can be hired. The flying carpet is not hired.
+
+The return ticket is nowhere. The description is "It's a ticket for one return journey to your home. Simply tear it to make the trip."
 	
 Carpet Service is a recurring scene. Carpet Service begins when the flying carpet is hired. Carpet Service ends when the time since Carpet Service began is 5 minutes.
 	
@@ -486,16 +519,57 @@ Before going west in Grounds:
 	If the flying carpet is nowhere:
 		Say "The exercise would no doubt do you a world of good, but you're solidly opposed to any long walks." instead;
 	else:
-		Say "You sprint to the west and hop onto the magic carpet, shamefully out of breath. A ghostly djinn materializes on the carpet and awaits your command. You describe as best you can the general location of the gnome village, and with a wordless nod he takes the carpet up into the air.[paragraph break]A short time later you descend into a forest north of town. This isn't strictly where you wanted to be, but it's probably close enough and you know better than to argue with extraplanar entities, so you hop off. The carpet swoops into the sky and vanishes, leaving you in...";
+		Say "You sprint to the west and hop onto the magic carpet, shamefully out of breath. A ghostly djinn materializes on the carpet and awaits your command. You describe as best you can the general location of the gnome village, and with a wordless nod he takes the carpet up into the air.[paragraph break]A short time later you descend into a forest north of town. This isn't strictly where you wanted to be, but it's probably close enough and you know better than to argue with extraplanar entities, so you hop off. The Djinn hands you a return ticket, then swoops the carpet into the sky and vanishes, leaving you in...";
+		Now the player has the return ticket;
 		Now the player is in Woods instead;
 
-Woods is a room. The description is "You find yourself in a pleasant little copse deep in the heart of an old forest. A path leads away to the northeast."
+Woods is a room. The description is "You find yourself in a pleasant little copse deep in the heart of an old forest. A path meanders from the northeast to the northwest."
 
-Clearing is a room. South from Clearing is northeast from Woods.
+The old forest is scenery in Woods. Understand "cospe" and "tree" and "trees" and "woods" as the old forest. The description is "The woods are lovely, dark and deep, but you have promises to keep, so get moving."
+
+Instead of climbing the forest, say "If you were a younger adventurer, maybe. But not now. Definitely not now." 
+
+Clearing is a room. South from Clearing is northeast from Woods. The description is "This clearing is a favorite of druids and other disreputable persons, for it is the site of an ancient circle of standing stones. Paths lead away to the south and west.[if unvisited][paragraph break]This place gives you the creeps, frankly. Wizards and granola types don't mix, and these enchanted woodland glades positively reek of weird nature magic."
+
+Instead of smelling in Clearing, say "Yes, definitely reeks of nature magic. It's unmistakable."
+
+The ancient circle of standing stones is scenery in Clearing. The description is "Undoubtedly placed here by ancient people with too much time on their hands, these megaliths have been here for as long as anybody can remember, but they have no practical use to anyone except satyrs and elves and hippies and the like." Understand "stone" and "stones" and "standing stone" and "megalith" and "megaliths" as the circle of standing stones.
 
 Index map with Clearing mapped northeast of Woods.
 
-Hillside is a room. It is west of Clearing and northwest of Woods.
+Hillside is a room. It is west of Clearing and northwest of Woods. The description is "This charming little hillside is the home of a gnome village. Tiny houses are arrayed on clean, tidy little streets, although they seem to be mostly deserted at the moment. Paths lead away to the east and southeast."
+
+The gnome village is scenery in Hillside. Understand "house/houses" and "tiny house/houses" and "street/streets" as the gnome village. The description is "It's everything the fairytale enthusiast could ever hope for - a little utopia filled with tiny houses and, presumably, eensy weensy little ruddy-faced people. Right now most everyone seems to be out, which is fine by you; you consider gnomes to be unimaginable dullards."
+
+The gnome salesman is a man. He is in Hillside. "A gnome wearing a preposterous suit struts about, talking nonstop." Understand "suit" and "preposterous suit" and "salesman" and "man" and "gnome" as the gnome salesman. The description is "Like most gnomes, he's very small. Unlike most gnomes he's dressed to the nines, provided the nines have no fashion sense. It's as though a pile of mauve suede got into a drunken brawl with a sentient pile of lace. Your stomach drops as he aims his ceaseless prattle at you - he's a salesman."
+
+Every turn while the player is in the location of the gnome salesman:
+	If the player is in Hillside:
+		If the player is wearing the hat and the player is wearing the robe:
+			Say "[one of]'Hey! Hey you! Wanna buy something? I've got something really good!'[or]'You, the big wizard! Hey! Let's trade! What have you got?'[or]'I've got something you'll love! Best prices in the Enchanted Forest!'[or]'Hey, c'mon! Buy something! C'mon!'[at random]";
+		else:
+			Say "[one of]'Hey! Hey you! Know any wizards? I've got all kinds of great stuff for wizards!'[or]'Want to buy something? Wait, you're not a wizard! Never mind!'[or]'Best prices! Best prices around for wizards, witches, and warlocks!'[at random]";
+	else:
+		Say "The gnome salesman shouts, 'Watch this!' He begins to perform some manner of absurd jig beneath the standing stones. You look around you nervously, waiting for a burst of indecent forest magic, but it turns out that the gnome was merely looking for his sample case.[paragraph break]He pops open the case, pulls out a tacky zirconium bracelet, and tosses it into your waiting hand. 'Top quality! Great at parties! Every wizard should have one!' he yammers before leaping behind a megalith and vanishing from sight, leaving you to stare at your dubious new purchase with growing regret.";
+		Now the player has the zirconium bracelet;
+		Now the gnome salesman is nowhere;
+		Award points for "getting conned by a gnome";
+		
+The tacky zirconium bracelet is a wearable reagent. The description is "You shudder with embarrassment. No, better not to look at it. Still, it does seem to carry some kind of modest enchantment. Probably residual forest magic. Ick."
+			
+Instead of showing something to the gnome salesman, try giving the noun to the gnome salesman.
+
+Instead of giving something to the gnome salesman:
+	If the player is wearing the hat and the player is wearing the robe:
+		If the noun is the gold Taffle:
+			Say "'Gold? Don't need any gold! Too much gold already!'";
+		else if the noun is the stone Taffle:
+			Say "The gnome's avaricious little eyes light up. 'That'll do! Yes! That'll do!' Before you can even inquire what the Taffle might buy he snatches it from your hand and scurries off to the east, motioning you to follow.";
+			Now the gnome salesman is in Clearing;
+		else:
+			Say "'No, no, no! Currency only!'";
+	Else:
+		Say "'Hey! I only do business with wizards! You don't look like a wizard to me!'";
 
 Outdoors is a region. Grounds, Woods, Clearing, and Hillside are in Outdoors.
 
