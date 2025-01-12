@@ -22,7 +22,7 @@ To say random (L - list of texts):
 
 Section - Kinds and Properties
 
-A reagent is a kind of thing. A reagent has a number called worth. The worth is usually 10.
+A reagent is a kind of thing.
 
 A wand is a kind of thing.
 
@@ -46,7 +46,7 @@ Check quirrzling:
 	Else if the power of the cauldron is not the potential of the cauldron:
 		Say "The illusory scroll quivers discorporeally in your hands and the cauldron makes ominous bubbling noises... but nothing happens. The cauldron will need to be fully charged with magical potential in order for the spell to take shape." instead;
 	Else:
-		Say "Rolling up your sleeves and striking a pose that would leave your illusionary audience screaming with adoration, you hold aloft the gossamer scroll and intone the Spell of Misery.[paragraph break]There's an explosion of astral electricity from the cauldron, a sound like the groaning of a thousand frustrated grooms, the weeping of ten million heartbroken brides, the shrieking of one very angry mother-in-law-to-be... and then silence, darkness. The spell, now something like a roiling ball of sentient joylessness, has flown off to find its target and unleash itself when the time is right.[paragraph break]You sigh contentedly. Might as well have Ethel but the kettle on. Nothing to do now but read about tomorrow's calamitous nuptials in the paper and collect your fee.";
+		Say "Rolling up your sleeves and striking a pose that would leave your illusionary audience screaming with adoration, you hold aloft the transluscent scroll and intone the Spell of Misery.[paragraph break]There's an explosion of astral electricity from the cauldron, a sound like the groaning of a thousand frustrated grooms, the weeping of ten million heartbroken brides, the shrieking of one very angry mother-in-law-to-be... and then silence, darkness. The spell, now something like a roiling ball of sentient joylessness, has flown off to find its target and unleash itself when the time is right.[paragraph break]You sigh contentedly. Might as well have Ethel but the kettle on. Nothing to do now but wait for news of tomorrow's calamitous nuptials in the paper and collect your fee.";
 		Award points for "ruining a wedding";
 		End the story saying "You have completed your contract!";
 
@@ -65,8 +65,8 @@ Check tearing something:
 	If the noun is not the return ticket, say "Probably best not to go ripping that up." instead.
 	
 Carry out tearing something:
-	Say "You rip the ticket in half, and instantly a puff of garish stage smoke envelops your body. When the inevitable coughing fit subsides you find yourself standing in...";
-	Now the player is in Parlor;
+	Say "You rip the ticket in half, sending a small spark of magical resonance into the sky. Moments later the ghostly Djinn and his flying carpet descend. You climb aboard and try not to look down as the carpet wooshes through the air and eventually delivers you to...";
+	Now the player is in Grounds;
 	Now the return ticket is nowhere;
 
 Section - Tables
@@ -102,6 +102,7 @@ Feat	Points
 "evading your creditors"		10
 "getting conned by a gnome"	10
 "ruining a wedding"	15
+"adding a reagent to the cauldron"	10
 
 
 Section - Misc
@@ -113,7 +114,7 @@ When play begins:
 
 Chapter 2 - Tests - Not for release
 
-Test all with "get jar / s / give jar to ethel / get eyeball / d / frotz / e / get hen / frotz / z / z / z / frotz / w / u / put hen in cauldron / s / get wand / n / n / n / get wand / point wand of frivolity at eyeball / get ruby / s / s / put ruby in cauldron / n / e / s / put wand of hedgehog empowerment in box / push button / get wand / put wand of frivolity in box / push button / get wand / open wardrobe / get hat / n / w / w / w / point wand of hedgehog enfeeblement at mister snuffles / point wand of sobriety at pearls / get quill / e / e / e / s / put quill in inkwell / n / e / frotz / get scroll / w / n / look under table / wear robe / wear hat / w / look in crystal ball / s / w / pull cord / w / z / get on carpet / nw / point wand of sobriety at coin / give coin to salesman / e / tear ticket / s / put bracelet in cauldron / say quirrzle"
+Test all with "get jar / s / give jar to ethel / get eyeball / d / frotz / e / get hen / frotz / z / z / z / frotz / w / u / put hen in cauldron / s / get wand / n / n / n / get wand / point wand of frivolity at eyeball / get ruby / s / s / put ruby in cauldron / n / e / s / put wand of hedgehog empowerment in box / push button / get wand / put wand of frivolity in box / push button / get wand / open wardrobe / get hat / n / w / w / w / point wand of hedgehog enfeeblement at mister snuffles / point wand of sobriety at pearls / get quill / e / e / e / s / put quill in inkwell / n / e / frotz / get scroll / w / n / look under table / wear robe / wear hat / w / look in crystal ball / s / w / pull cord / w / z / get on carpet / nw / point wand of sobriety at coin / give coin to salesman / e / tear ticket / e / e / s / put bracelet in cauldron / say quirrzle"
 
 Chapter 3 - House Downstairs
 
@@ -201,9 +202,9 @@ Check inserting something into the cauldron:
 		Say "Only magical things need go into the cauldron." instead;
 
 Carry out inserting something into the cauldron:
-	Increase the score by the worth of the noun;
 	Now the noun is nowhere;
-	Increase the power of the cauldron by 1 instead;
+	Increase the power of the cauldron by 1;
+	Award points for "adding a reagent to the cauldron" instead;
 		
 Report inserting something into the cauldron:
 	Say "You plop [the noun] into the cauldron. There's a bit of fizz and a flash of [one of]red[or]blue[or]mauve[or]pale[or]green[at random] light as your brew becomes stronger![if the power of the cauldron is the potential of the cauldron][paragraph break]A surge of tingly warmth pours forth from the cauldron - it has reached its full potential. Now you need only pronounce the magic word to complete the spell!" instead;
@@ -240,13 +241,13 @@ Parlor is a room. It is north of Brewery. The description is "This cozy, comfort
 
 The ornate wooden table is scenery in Parlor. The description is "It's well-crafted and rather expensive, and it's primary duty is to give consultations a touch of class. A silver tea service sits atop it." It is a supporter.
 
-The silver tea service is scenery in Parlor. The description is "All the expected accoutrements for making and ingesting tea in style."
+The silver tea service is scenery in Parlor. The description is "All the expected accoutrements for making and ingesting tea in style." Understand "tea set" as the tea service.
 
 The big wooden chair is scenery in Parlor. The description is "This is your chair; nice and big so the clients don't forget who wears the mystical robes around here." Understand "chairs" as the big wooden chair.
 
 The small wooden chair is scenery in Parlor. The description is "Small and slightly uncomfortable, chosen to keep your clients from feeling too much at home." Understand "chairs" as the small wooden chair.
 
-The self portrait is scenery in Parlor. The description is "Stern, yet compassionate; strong, yet approachable; wise, yet humble; the artist definitely captured a lot of fine qualities, which makes this piece basically a work of fiction."
+The self portrait is scenery in Parlor. The description is "Stern, yet compassionate; strong, yet approachable; wise, yet humble; the artist definitely captured a lot of fine qualities, which makes this piece basically a work of fiction." Understand "painting" and "picture" as the self portrait.
 
 The rumpled shag carpet is scenery in the Parlor. The description is "Soft, warm, and pleasant to walk on. Stylish too!"
 
@@ -276,6 +277,10 @@ Instead of showing the jar to Ethel, say "'Having trouble getting it open, love?
 Hallway is a room. It is east of Parlor. The description is "Tastefully decorated with striped wallpaper, the hallway connects your bedroom to the south with the rest of the house to the north and west.[if the inkwell is empty] A stately grandfather clock ticks away the eons against the eastern wall.[else] The grandfather clock has vanished to parts unknown, revealing a secret passage to the east."
 
 The stately grandfather clock is scenery in the Hallway. The printed name is "grandfather clock". The description is "An antique of some value, this clock was given to you a few years ago by either a grateful client or a repentant enemy. You can't remember which."
+
+Every turn while the player is in Hallway:
+	If the grandfather clock is in the Hallway:
+		Say "Tick... tick... tick...";
 
 Before going east in Hallway:
 	If the grandfather clock is in Hallway:
@@ -421,7 +426,7 @@ Instead of searching the crystal ball:
 		If the player is foresighted:
 			Say "You peer greedily into the crystal ball again, hoping for another revelation, but the same vision comes to you once more... ruin, payment, and yourself, giving a something to a puffed up gnome.";
 		else:
-			Say "You pass your hands ceremoniously over the crystal ball and await a vision of the future..[paragraph break]You see a howling wind, a terrifying storm, party guests fleeing in all directions, a sobbing bride, a dumbfounded groom... you see a great pile of gold being delivered to your front door by a surly yeoman wearing the livery of Lord Bletchley... and finally, you see yourself, robed and wearing your hat, giving something to a small, foppishly-dressed man...[paragraph break]The vision goes dark. Promising portents! You recognize where the vision took place - it was the gnome village on the outskirts of town near the old standing stones. Since all of the visions are likely to be interconnected you should probably plan to go there as soon as possible.";
+			Say "You pass your hands ceremoniously over the crystal ball and await a vision of the future...[paragraph break]You see a howling wind, a terrifying storm, party guests fleeing in all directions, a sobbing bride, a dumbfounded groom... you see a great pile of gold being delivered to your front door by a surly yeoman wearing the livery of Lord Bletchley... and finally, you see yourself, robed and wearing your hat, giving something to a small, foppishly-dressed man...[paragraph break]The vision goes dark. Promising portents! You recognize where the vision took place - it was the gnome village on the outskirts of town near the old standing stones. Since all of the visions are likely to be interconnected you should probably plan to go there as soon as possible.";
 			Now the player is foresighted;
 			Award points for "seeing a mystical vision";
 
