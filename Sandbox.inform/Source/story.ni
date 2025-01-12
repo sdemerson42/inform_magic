@@ -46,7 +46,7 @@ Check quirrzling:
 	Else if the power of the cauldron is not the potential of the cauldron:
 		Say "The illusory scroll quivers discorporeally in your hands and the cauldron makes ominous bubbling noises... but nothing happens. The cauldron will need to be fully charged with magical potential in order for the spell to take shape." instead;
 	Else:
-		Say "Rolling up your sleeves and striking a pose that would leave your illusionary audience screaming with adoration, you hold aloft the gossamer scroll and intone the Spell of Misery.[paragraph break]There's an explosion of astral electricity from the cauldron, a sound like the groaning of a thousand frustrated grooms, the weeping of ten million heartbroken brides, the shrieking of one very angry mother-in-law-to-be... and with that, your work is done. Nothing to do now but read about tomorrow's calamitous nuptials in the paper and collect your fee.";
+		Say "Rolling up your sleeves and striking a pose that would leave your illusionary audience screaming with adoration, you hold aloft the gossamer scroll and intone the Spell of Misery.[paragraph break]There's an explosion of astral electricity from the cauldron, a sound like the groaning of a thousand frustrated grooms, the weeping of ten million heartbroken brides, the shrieking of one very angry mother-in-law-to-be... and then silence, darkness. The spell, now something like a roiling ball of sentient joylessness, has flown off to find its target and unleash itself when the time is right.[paragraph break]You sigh contentedly. Might as well have Ethel but the kettle on. Nothing to do now but read about tomorrow's calamitous nuptials in the paper and collect your fee.";
 		Award points for "ruining a wedding";
 		End the story saying "You have completed your contract!";
 
@@ -247,6 +247,8 @@ The big wooden chair is scenery in Parlor. The description is "This is your chai
 The small wooden chair is scenery in Parlor. The description is "Small and slightly uncomfortable, chosen to keep your clients from feeling too much at home." Understand "chairs" as the small wooden chair.
 
 The self portrait is scenery in Parlor. The description is "Stern, yet compassionate; strong, yet approachable; wise, yet humble; the artist definitely captured a lot of fine qualities, which makes this piece basically a work of fiction."
+
+The rumpled shag carpet is scenery in the Parlor. The description is "Soft, warm, and pleasant to walk on. Stylish too!"
 
 The clay jar is a container on the wooden table. It is openable. It is closed.
 
