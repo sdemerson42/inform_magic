@@ -46,7 +46,7 @@ Check quirrzling:
 	Else if the power of the cauldron is not the potential of the cauldron:
 		Say "The illusory scroll quivers discorporeally in your hands and the cauldron makes ominous bubbling noises... but nothing happens. The cauldron will need to be fully charged with magical potential in order for the spell to take shape." instead;
 	Else:
-		Say "Rolling up your sleeves and striking a pose that would leave your illusionary audience screaming with adoration, you hold aloft the transluscent scroll and intone the Spell of Misery.[paragraph break]There's an explosion of astral electricity from the cauldron, a sound like the groaning of a thousand frustrated grooms, the weeping of ten million heartbroken brides, the shrieking of one very angry mother-in-law-to-be... and then silence, darkness. The spell, now something like a roiling ball of sentient joylessness, has flown off to find its target and unleash itself when the time is right.[paragraph break]You sigh contentedly. Might as well have Ethel but the kettle on. Nothing to do now but wait for news of tomorrow's calamitous nuptials in the paper and collect your fee.";
+		Say "Rolling up your sleeves and striking a pose that would leave your illusionary audience screaming with adoration, you hold aloft the transluscent scroll and intone the Spell of Misery.[paragraph break]There's an explosion of astral electricity from the cauldron, a sound like the groaning of a thousand frustrated grooms, the weeping of ten million heartbroken brides, the shrieking of one very angry mother-in-law-to-be... and then silence, darkness. The spell, now something like a roiling ball of sentient joylessness, has flown off to find its target and unleash itself when the time is right.[paragraph break]You sigh contentedly. Might as well have Ethel put the kettle on. Nothing to do now but wait for news of tomorrow's calamitous nuptials in the paper and collect your fee.";
 		Award points for "ruining a wedding";
 		End the story saying "You have completed your contract!";
 
@@ -76,6 +76,9 @@ Room	Barks
 The Brewery	{ "Ethel polishes the cauldron with determination, making no discernable difference.", "Ethel mops around the pentagram, careful not to unleash any imprisoned demons.", "Ethel does a bit of light dusting." }
 The Store Room	{ "Ethel brandishes a filthy rag and applies additional dust to the shelves.", "Ethel looks around for things to tidy.", "Ethel hums to herself in a distracted (and distracting) fashion." }
 The Parlor	{ "Ethel applies a foul-smelling cleaning solution to your chair.", "Ethel methodically polishes some of the furniture, saving the rest for a special treat.", "You hear a tremendous clattering as Ethel wrestles with her old nemesis, the tea service." }
+The Scrying Room	{ "Ethel dabs warily at the crystal ball with a duster.", "Ethel inspects the mural critically.", "Ethel peers disapprovingly at your mystical paraphernalia." }
+The Dining Room	{ "Ethel looks around and shakes her head in exasperation.", "Ethel dusts the empty bottles without actually removing them.", "Ethel whistles quietly as she applies several pungent cleaning agents to the dinner table." }
+The Hallway	{ "Ethel mops the floor, but her heart doesn't seem to be truly in it.", "Ethel stares inscrutibly at the wallpaper.", "[if the grandfather clock is in The Hallway]Ethel carefully dusts the grandfather clock.[else]Ethel glances at the secret passage with a knowing smirk." }
 
 Table of Transformations
 Wand	Start	Finish	Sound
@@ -108,7 +111,7 @@ Feat	Points
 Section - Misc
 
 When play begins: 
-	Say "'So as I understand it, milord, your daughter is to be wed tomorrow, but you would prefer the wedding to be an unhappy one, yes?'[paragraph break]'Or to not happen at all, ideally,' says Lord Bletchley, your esteemed client. 'I don't approve of the groom or his family, and frankly this whole thing was my wife's idea. Well, I intend to make it an affair to remember! With your help, of course.'[paragraph break]'Of course,' you murmur distractedly, your mind occupied with calculating your exhorbitant fee. 'Well, I suppose I can conjure up a terrifying storm of some kind for my standard rate. For a bit extra I'll throw in a minor earthquake, or make it rain frogs...'[paragraph break]Ten minutes and a bit of dickering later, with a down payment in hand, you watch Lord Bletchley stride happily out of your parlor. That went rather well... now, to work![paragraph break][bracket]Press any key[close bracket]";
+	Say "'So as I understand it, milord, your daughter is to be wed tomorrow, but you would prefer the wedding to be an unhappy one, yes?'[paragraph break]'Or to not happen at all, ideally,' says Lord Bletchley, your esteemed client. 'I don't approve of the groom or his family, and frankly this whole thing was my wife's idea. Well, I intend to make it an affair to remember! With your help, of course.'[paragraph break]'Of course,' you murmur distractedly, your mind occupied with calculating your exhorbitant fee. 'Well, I suppose I can conjure up a terrifying storm of some kind for my standard rate. For a bit extra I'll throw in a minor earthquake, or make it rain frogs...'[paragraph break]Ten minutes and a bit of dickering later, with a down payment in hand, you watch Lord Bletchley stride happily out of your parlor. That went rather well, and given the enormous amount of debt you've run up this year the timing is perfect. Now, to work![paragraph break][bracket]Press any key[close bracket]";
 	Wait for any key;
 	Say paragraph break;
 
@@ -116,7 +119,7 @@ Chapter 2 - Tests - Not for release
 
 Test carpet with "n / get wand / s / e / s / put wand in box / push button / get wand / n / w / w / w / point wand at pearls / e / e / n / look in ball / s / w / pull cord / w / z"
 
-Test all with "get jar / s / give jar to ethel / get eyeball / d / frotz / e / get hen / frotz / z / z / z / frotz / w / u / put hen in cauldron / s / get wand / n / n / n / get wand / point wand of frivolity at eyeball / get ruby / s / s / put ruby in cauldron / n / e / s / put wand of hedgehog empowerment in box / push button / get wand / put wand of frivolity in box / push button / get wand / open wardrobe / get hat / n / w / w / w / point wand of hedgehog enfeeblement at mister snuffles / point wand of sobriety at pearls / get quill / e / e / e / s / put quill in inkwell / n / e / frotz / get scroll / w / n / look under table / wear robe / wear hat / w / look in crystal ball / s / w / pull cord / w / z / get on carpet / nw / point wand of sobriety at coin / give coin to salesman / e / tear ticket / s / z / get on carpet / e / e / s / put bracelet in cauldron / say quirrzle"
+Test all with "n / get wand / e / get jar / look under table / s / w / s / s / give jar to ethel / get eyeball / get wand / n / d / frotz / e / get hen / frotz / z / z / z / frotz / w / u / put hen in cauldron / point wand of frivolity at eyeball / get ruby / put ruby in cauldron / n / e / s / put wand of hedgehog empowerment in box / push button / get wand / put wand of frivolity in box / push button / get wand / open wardrobe / get hat / n / w / w / w / point wand of hedgehog enfeeblement at mister snuffles / point wand of sobriety at pearls / get quill / e / e / e / s / put quill in inkwell / n / e / frotz / get scroll / wear robe / wear hat / w / w / n / look in crystal ball / s / w / pull cord / w / z / get on carpet / nw / point wand of sobriety at coin / give coin to salesman / e / tear ticket / s / z / get on carpet / e / e / s / put bracelet in cauldron / say quirrzle"
 
 Chapter 3 - House Downstairs
 
@@ -141,14 +144,14 @@ Carry out frotzing in House Downstairs:
 Report frotzing in House Downstairs:
 	Say "You raise your arms impressively and shout, 'Frotz!' There is a quick burst of greenish light, and the enchanted gate [if enchanted gate is open]flies open![else]slams shut!" instead;
 
-The statue of a hen is a reagent. It is in The Vault. The description is "It's made of alabaster or something. You can't really remember after all these years. You got it from a seedy merchant in Zanthrus who assured you it is steeped in magical potency, but you're not sure it actually does anything." Understand "alabaster" and "alabaster statue" and "alabaster hen" as the statue of a hen.
+The statue of a hen is a reagent. It is in The Vault. The description is "It's made of alabaster or something. You got it from a seedy merchant in Zanthrus who assured you it is steeped in magical potency, but you're not sure it has any practical use." Understand "alabaster" and "alabaster statue" and "alabaster hen" as the statue of a hen.
 
-The horde of brutish goblins is fixed in place. It is nowhere. "There's a horde of brutish goblins here, stomping around and generally being a nuisance." The description is "There's five of them. Dirty little oiks!"
+The horde of brutish collections goblins is fixed in place. It is nowhere. "There's a horde of brutish collections goblins here, stomping around and generally being a nuisance." The description is "There's five of them. Dirty little tortfeasors!"
 
 Goblin Attack is a scene. Goblin Attack begins when the player has the statue of a hen. Goblin Attack ends when the time since Goblin Attack began is 5 minutes.
 
 When Goblin Attack begins:
-	Say "Suddenly there's a loud crashing noise from somewhere above you. You hear the tramp tramp tramping of boots clomping down the cellar stairs.";
+	Say "Suddenly there's a loud crashing noise from somewhere above you. You hear the tramp tramp tramping of boots clomping down the cellar stairs. Uh oh... sounds like one of your (many) creditors is tired of waiting!";
 	
 When Goblin Attack ends:
 	Say "The stomp of boots recommences as the intruders retreat back up the stairs and, hopefully, out of your house.";
@@ -164,17 +167,17 @@ Every turn during Goblin Attack:
 	If t is 1 minute:
 		Now the horde of goblins is in the Antechamber;
 		If the player is in the Antechamber:
-			Say "You look up to see a horde of ill-mannered goblins stomping down your stairs. They begin smashing everything they can lay their paws on, which unfortunately includes all of your bones.";
-			End the story saying "You have been mangled by goblins.";
+			Say "You look up to see a horde of ill-mannered collections goblins stomping down your stairs. They begin smashing everything they can lay their paws on, which unfortunately includes all of your bones.";
+			End the story saying "You have run afoul of your creditors.";
 		else:
 			Say "The noise grows louder, and the babble of monstrous voices comes blaring from the Antechamber.";
 	Else if t is greater than 1 minute:
 		If the player is in the Antechamber:
 			Say "The goblins grin when they see you, and promptly set about beating you senseless.";
-			End the story saying "You have been mangled by goblins.";
+			End the story saying "You have run afoul of your creditors.";
 		else if the enchanted gate is open:
-			Say "A horde of goblins comes rushing through the open gate and, spotting you, decide to treat you to a senseless beating.";
-			End the story saying "You have been mangled by goblins.";
+			Say "A horde of collections goblins comes rushing through the open gate and, spotting you, decide to treat you to a senseless beating.";
+			End the story saying "You have run afoul of your creditors.";
 		else:
 			Say "[one of]There's a tremendous commotion from outside the enchanted gate as your uninvited guests search the room.[or]Loud, yammering voices and random destruction can be heard through the gate.[or]Fists bang angrily on the other side of the gate, but it is futile.[at random]";
 
@@ -229,7 +232,7 @@ The wand of hedgehog empowerment is a wand. It is on the wooden shelves. The des
 Ethel is a woman. She is in the Brewery. "Ethel is here, tidying up the place." The description is "She's your maid. Charming woman, and very efficient!" 
 
 The destinations are {
-	south, north, north, south
+	south, north, north, north, east, south, west, south
 }
 
 The bark table is the Table of Ordinary Ethel Barks.
@@ -253,29 +256,6 @@ The self portrait is scenery in Parlor. The description is "Stern, yet compassio
 
 The rumpled shag carpet is scenery in the Parlor. The description is "Soft, warm, and pleasant to walk on. Stylish too!"
 
-The clay jar is a container on the wooden table. It is openable. It is closed.
-
-A dragon's eyeball is in the clay jar. The description is "You might assume a dragon's eyeball would be very exciting to look at, but in fact they're kind of uninteresting. Even its red coloration is a bit lackluster." Understand "red eyeball" as the dragon's eyeball.
-
-Instead of opening the clay jar:
-	Say "Try as you might the jar just won't open. You may need to get some help with this.";
-
-Instead of closing the clay jar:
-	If the jar is open:
-		Say "You can't face the humiliation of having Ethel open it for you again.";
-	else:
-		Continue the action;
-		
-Instead of giving the clay jar to Ethel:
-	If the clay jar is closed:
-		Say "Ethel wrenches the jar open with practised ease and tosses it back to you without a word.";
-		Now the jar is open;
-		Now Ethel is paused;
-	else:
-		Say "The jar is already open. Ethel probably doesn't have any use it otherwise.";
-
-Instead of showing the jar to Ethel, say "'Having trouble getting it open, love? Give it here.'"
-		
 Hallway is a room. It is east of Parlor. The description is "Tastefully decorated with striped wallpaper, the hallway connects your bedroom to the south with the rest of the house to the north and west.[if the inkwell is empty] A stately grandfather clock ticks away the eons against the eastern wall.[else] The grandfather clock has vanished to parts unknown, revealing a secret passage to the east."
 
 The stately grandfather clock is scenery in the Hallway. The printed name is "grandfather clock". The description is "An antique of some value, this clock was given to you a few years ago by either a grateful client or a repentant enemy. You can't remember which."
@@ -350,7 +330,7 @@ Instead of pushing the button:
 	
 The wand of hedgehog enfeeblement is a wand. The description is "A pretty standard wand, really. Point it at a hedgehog and the hedgehog becomes weaker and less assured."
 
-The wand of sobriety is a wand. The description is "It's a discount wand of somewhat limited utility. When you point it at something small, round, useless and beautiful, the pointee becomes something small, round, useless and dull."
+The wand of sobriety is a wand. The description is "It's a discount wand of somewhat limited utility. When you point it at something small, round, and beautiful, the pointee becomes something small, round, and dull."
 
 Carry out pointing the wand of sobriety at something:
 	If there is a Start of the second noun in the Table of Transformations:
@@ -371,6 +351,29 @@ The dinner table is scenery in the Dining Room. It is a supporter. The descripti
 Some empty bottles are fixed in place. They are on the dinner table. "A number of empty bottles litter dinner table." The description is "Several of your favorite labels are represented: Old Flarney, Schloplager, Thunderbucket... perhaps you overdid it a bit last night. Indeed, you woke up under the table this morning." Understand "bottle" and "beer" and "beers" and "Old Flarney" and "Schloplager" and "Thunderbucket" as the empty bottles.
 
 Instead of taking the empty bottles, say "Best let Ethel deal with these. It's what you're paying her for."
+
+The clay jar is a container on the dinner table. It is openable. It is closed.
+
+A dragon's eyeball is in the clay jar. The description is "You might assume a dragon's eyeball would be very exciting to look at, but in fact they're kind of uninteresting. Even its red coloration is a bit lackluster." Understand "red eyeball" as the dragon's eyeball.
+
+Instead of opening the clay jar:
+	Say "Try as you might the jar just won't open. You may need to get some help with this.";
+
+Instead of closing the clay jar:
+	If the jar is open:
+		Say "You can't face the humiliation of having Ethel open it for you again.";
+	else:
+		Continue the action;
+		
+Instead of giving the clay jar to Ethel:
+	If the clay jar is closed:
+		Say "Ethel wrenches the jar open with practised ease and tosses it back to you without a word.";
+		Now the jar is open;
+		Now Ethel is paused;
+	else:
+		Say "The jar is already open. Ethel probably doesn't have any use it otherwise.";
+
+Instead of showing the jar to Ethel, say "'Having trouble getting it open, love? Give it here.'"
 
 The purple robe is a wearable thing. It is nowhere. The description is "Your finest robe, rumpled and slightly fragrant. Definitely in need of a wash."
 
@@ -436,7 +439,7 @@ The mural is scenery in the Scrying Room. The description is "Beautifully crafte
 
 The alchemical bench is a supporter in the Scrying Room. It is scenery.
 
-The wand of frivolity is on the alchemical bench. It is a wand. The description is "It's a discount wand of somewhat limited utility. When you point it at something small, round, useless and dull, the pointee becomes something small, round, useless and beautiful."
+The wand of frivolity is on the alchemical bench. It is a wand. The description is "It's a discount wand of somewhat limited utility. When you point it at something small, round, and dull, the pointee becomes something small, round, and beautiful."
 
 The spherical ruby is a reagent. The description is "A perfectly round ruby, pulsing with magical potential!" Understand "round ruby" and "perfectly round ruby" as the ruby.
 	
@@ -552,15 +555,15 @@ Every turn during Return Service:
 			
 Instead of entering the flying carpet in Woods, try going south instead;
 
-Before going south in Woods:
+Instead of going south in Woods:
 	If the flying carpet is nowhere:
-		Say "It's a long way back. Use your return ticket." instead;
+		Say "It's a long way back. Use your return ticket.";
 	else:
 		Say "You hop onto the magic carpet. The djinn reappears and wooshes you into the sky, back across the forest, and eventually drops you off at...";
 		Now the flying carpet is nowhere;
-		Now the player is in Grounds instead;
+		Now the player is in Grounds;
 
-Woods is a room. The Woods is south of the Woods. The description is "You find yourself in a pleasant little copse deep in the heart of an old forest. A path meanders from the northeast to the northwest."
+Woods is a room. The description is "You find yourself in a pleasant little copse deep in the heart of an old forest. A path meanders from the northeast to the northwest."
 
 The old forest is scenery in Woods. Understand "cospe" and "tree" and "trees" and "woods" as the old forest. The description is "The woods are lovely, dark and deep, but you have promises to keep, so get moving."
 
@@ -602,6 +605,7 @@ Instead of giving something to the gnome salesman:
 			Say "'Gold? Don't need any gold! Too much gold already!'";
 		else if the noun is the stone Taffle:
 			Say "The gnome's avaricious little eyes light up. 'That'll do! Yes! That'll do!' Before you can even inquire what the Taffle might buy he snatches it from your hand and scurries off to the east, motioning you to follow.";
+			Now the stone taffle is nowhere;
 			Now the gnome salesman is in Clearing;
 		else:
 			Say "'No, no, no! Currency only!'";
