@@ -1,6 +1,8 @@
-"Magic!" by Anonymous
+"Magic!" by Scott Emerson
 
 Include Simple People by Scott Emerson. Include Basic Screen Effects by Emily Short.
+
+The story headline is "An Interactive Wizard's Conundrum".
 
 Use scoring.
 The maximum score is 100.
@@ -344,7 +346,7 @@ Report pointing the wand of sobriety at something:
 			Say "A burst of pink sparks flies from the tip of the wand of sobriety, and with a shuddering <[the Sound corresponding to a Start of the second noun in the Table of Transformations]> [the second noun] becomes [a Finish corresponding to a Start of the second noun in the Table of Transformations] and drops to the floor!" instead;
 	Say "You point the wand of sobriety at [the second noun], but nothing interesting happens." instead;
 
-Dining Room is a room. It is north of Hallway. The description is "This is a room where you spend a bit too much time, your wizardly duties frequently driving you to gastronmic excess. The dinner table is the star attraction here, but sadly no dinner will be forthcoming until you complete the task at hand. Exits lead to the west and south."
+Dining Room is a room. It is north of Hallway. The description is "This is a room where you spend a bit too much time, your wizardly duties frequently driving you to gastronomic excess. The dinner table is the star attraction here, but sadly no dinner will be forthcoming until you complete the task at hand. Exits lead to the west and south."
 
 The dinner table is scenery in the Dining Room. It is a supporter. The description is "A magnificent bit of craftsmanship, which is good because you definitely put it to good use." The dinner table can be searched. The dinner table is not searched.
 
@@ -385,7 +387,7 @@ Instead of looking under the dinner table:
 		Now the player has the purple robe;
 		Now the dinner table is searched;
 
-Stage is a room. It is east of Hallway. The description is "You stand on a simple wooden stage, surrounded by your adoring fans. They yearn to praise your every action! Should you grow tired of adulation, the exit is to the west.[if unvisited][paragraph break]You sneak a peak back out into the hallway to make certain Ethel isn't eavesdropping. This room is a bit of an indulgence, but every wizard should have one. True, the crowd is merely a sustained illusion, but they do wonders for your self-esteem!"
+Stage is a room. It is east of Hallway. The description is "You stand on a simple wooden stage, surrounded by your adoring fans. They yearn to praise your every action! Should you grow tired of adulation, the exit is to the west.[if unvisited][paragraph break]You sneak a peek back out into the hallway to make certain Ethel isn't eavesdropping. This room is a bit of an indulgence, but every wizard should have one. True, the crowd is merely a sustained illusion, but they do wonders for your self-esteem!"
 
 The audience is a person in Stage. It is scenery. Understand "illusion" and "crowd" and "people" and "fans" and "adoring fans" as the audience. The description is "Your audience is hopelessly devoted to you, and you feel a genuine fondness for them despite their being more or less a collective figment of your imagination. They seem to especially like it when you say magic words for them."
 
